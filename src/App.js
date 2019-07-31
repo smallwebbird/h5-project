@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import routes from './api';
+import Header from './components/Header';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  render() {
+    const prefixCls = 'app'
+    return (
+      <div className={prefixCls}>
+        <Header />
+        {
+          routes.map( (route, index) => (
+            index === 0 ? <Route path={route.path} exact component={route.component}/>
+                        : <Route path={route.path} component={route.component}/>
+          ) )
+        }
+      </div>
+    )
+  }
 }
 
-export default App;

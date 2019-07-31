@@ -1,0 +1,24 @@
+.app-header {
+    padding: 0;
+    margin: 0;
+    height: 8vh;
+    background: black;
+    border-bottom: 2px solid black;
+}
+.app-header li {
+    width: 50%;
+    line-height: 8vh;
+    text-align: center;
+    display: inline-block;
+}
+.app-header li a{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+}
+.app-header li a:focus {
+    color: black;
+    background: white;
+}
